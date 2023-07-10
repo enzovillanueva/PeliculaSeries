@@ -12,7 +12,7 @@ html{
 }
 
 body{
-    background: linear-gradient(#a8dadc, #f1faee);
+    background: linear-gradient(#390099, #9e0059, #ff0054);
 }
 
 div.contenedor{
@@ -63,7 +63,7 @@ section.coleccion .popular{
     display: flex;
     background-color: transparent;
     margin: 1.5em 2em;
-    height: 25em;
+    height: 24em;
 }
 
 section.coleccion .popular::-webkit-scrollbar-thumb:hover{
@@ -96,7 +96,7 @@ div.popular .film{
 div.popular .poster{
     width: 10em;
     padding: 5px;
-    height: 15em;
+    height: 14.5em;
     margin-bottom: 10px;
 	border-radius: 15px;
 }
