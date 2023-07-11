@@ -34,7 +34,7 @@ function addFilmsHTML(data){
         box += `
             <div class="film">
                 <img class="poster" src="${urlImage}${element.poster_path}"></img>
-                <h3 class="titulo">${element.title}</h3>
+                <div class="titulo">${element.title}</div>
             </div>`
     });
     document.getElementById("popular").innerHTML = box;
@@ -46,7 +46,7 @@ function addSeriesHTML(data){
         box += `
             <div class="film">
                 <img class=poster src="${urlImage}${element.poster_path}"></img>
-                <h3 class=titulo>${element.name}</h3>
+                <div class="titulo">${element.name}</div>
             </div>`
     });
     document.getElementById("series").innerHTML = box;

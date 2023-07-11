@@ -8,7 +8,7 @@
 }
 
 html{
-    height: 300vh;
+    height: 170vh;
 }
 
 body{
@@ -17,10 +17,12 @@ body{
 
 div.contenedor{
     margin: 2em 3em;
+    position: relative;
 }
 
 header.cabecero{
     display: flex;
+    position: sticky;
     height: 5em;
     align-items: center;
     justify-content: space-between;
@@ -89,16 +91,53 @@ section.coleccion .popular::-webkit-scrollbar-thumb{
 }
 
 div.popular .film{
+    position: relative;
     text-align: center;
     border-radius: 10px;
 }
 
 div.popular .poster{
-    width: 10em;
+    width: 14.5em;
+    height: 23em;
     padding: 5px;
-    height: 14.5em;
-    margin-bottom: 10px;
 	border-radius: 15px;
+}
+
+div.titulo{
+    position: absolute;
+    text-align: center;
+    padding: 10px;
+    font-size: 28px;
+    font-weight: 1000;
+    width: 100%;
+    top: 30%;
+    color: transparent;
+}
+
+div.film:hover div.titulo{
+    background: linear-gradient(#390099,#9e0059, #ff0054);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;  
+}
+
+div.film:hover img.poster{
+    animation-name: poster;
+    animation-duration: 800ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes poster {
+    0%{
+        transform: scale(1);
+        filter: invert(0);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.02);
+        filter: invert(70%);
+        opacity: .5;
+    }
 }
 
 h2{
