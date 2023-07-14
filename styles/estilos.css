@@ -7,12 +7,9 @@
     font-family: 'Poppins', sans-serif;
 }
 
-html{
-    height: 170vh;
-}
-
 body{
     background: linear-gradient(#390099, #9e0059, #ff0054);
+    min-width: 53em;
 }
 
 div.contenedor{
@@ -131,7 +128,7 @@ ul.popular .film{
 }
 
 ul.popular .poster{
-    width: 15.3em;
+    width: 17em;
     height: 25em;
     padding: 5px;
 	border-radius: 15px;
@@ -175,6 +172,6 @@ li.film:hover img.poster{
 }
 
 h2{
-    margin-left: 2.5em;
+    margin-left: 2.9em;
     margin-top: 0.5em;
 }
