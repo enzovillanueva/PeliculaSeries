@@ -40,6 +40,7 @@ const popularFilms = async () => {
     const response = await fetch(`${urlMovie}popular?api_key=${apiKey}&language=es-MX`);
     if (response.status == 200) {
         const data = await response.json();
+        console.log(data);
         addFilmsHTML(data);
     }else if (response.status == 401){
         console.log("La llave esta MAL");
@@ -62,15 +63,15 @@ const series = async () => {
 popularFilms();
 series();
 
-
 function addFilmsHTML(data){
     let box = '';
     data.results.forEach(element => {
         box += `
-            <li class="film">
+            <!-- Si clickeo en algunas de estas peliculas, se enviará el ID de las mismas a la otra pág.-->
+            <a href="vista.html?${element.id}" class="film">
                 <img class="poster" src="${urlImage}${element.poster_path}"></img>
                 <div class="titulo">${element.title}</div>
-            </li>`
+            </a>`
     });
     document.getElementById("popular").innerHTML = box;
 }
@@ -79,10 +80,10 @@ function addSeriesHTML(data){
     let box = '';
     data.results.forEach(element => {
         box += `
-            <li class="film">
+            <a href="vista.html" class="film">
                 <img class=poster src="${urlImage}${element.poster_path}"></img>
                 <div class="titulo">${element.name}</div>
-            </li>`
+            </a>`
     });
     document.getElementById("series").innerHTML = box;
 }

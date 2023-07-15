@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(#390099, #9e0059, #ff0054);
+    min-width: 53em;
+}
+
+div.contenedor{
+    margin: 1.6em 3em;
+    position: relative;
+}
+
+header.cabecero{
+    display: flex;
+    position: sticky;
+    top: 0;
+    height: 5em;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #091218;
+    border-radius: 0 0 10px 10px;
+    z-index: 10;
+}
+
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+    text-shadow: 0 0 10px #FFFFFF;
+}
+
+div.titulo_pag{
+    margin-left: 50px;
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+nav.links{
+    margin-right: 50px;
+    font-size: 1.2em;
+    
+}
+
+nav.links a{
+    height: 100%;
+    padding: 10px;
+}
+
+section.informacion{
+    background-color: rgba(255, 255, 255, 0.39);
+    margin: 1.7em 0;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+div.detalles{
+    margin: 2em 4em;
+    border-radius: 10px;
+    height: 35em;
+    display: flex;
+    position: relative;
+}
+
+img.portada{
+    width: 23em;
+    margin: 1em 2em;
+    border-radius: 15px;
+}
+
+div.overview{
+    /* background-color: bisque; */
+    margin: 2em 2em 2em 0;
+}
+
+div.rate{
+    display: flex;
+    /* background-color: blue; */
+    font-size: 1.3;
+    font-weight: bolder;
+    height: 5em;
+    align-items: center;
+    justify-content: center;
+}
+
+div.sinopsis{
+    /* background-color: chocolate; */
+    height: 15em;
+    font-size: 1.36em;
+}
