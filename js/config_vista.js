@@ -13,16 +13,46 @@ poster = document.getElementById("poster"),
 sinopsis = document.getElementById("sinopsis"),
 rate = document.getElementById("rate");
 
+// circle progress.
+const circular_progress = document.querySelector(".circle"),
+value_cp = document.querySelector(".value-circle");
+
+let progreso = 0, progresoFinal = 60, velocidad = 10;
+
 const information = async () => {
     const response = await fetch(`${url}${cons}?api_key=${apiKey}&language=es-MX`);
     if (response.status == 200){
         const data = await response.json();
         console.log(data)
-        title.innerHTML = data.original_title;
-        poster.src = `${urlImage}${data.poster_path}`;
-        sinopsis.innerHTML = data.overview;
-        rate.innerHTML = `${data.release_date} - ${data.vote_average}`;
+        addInformation(data);
     };
 }
 
+const progress = setInterval(() => {
+    progreso++;
+    value_cp.textContent = `${progreso}%`;
+    circular_progress.style.background = `conic-gradient(#b5179e ${progreso * 3.6}deg, #4a4e69 ${progreso * 3.6}deg)`;
+    if (progreso == progresoFinal) clearInterval(progress);
+}, velocidad)
+
 information();
+
+function addGenres(data) {
+    let box = "";
+    data.genres.forEach(element => {
+        box += `
+        <div class="genero">${element.name}</div>
+        `
+    });
+    document.getElementById("genres").innerHTML = box;
+}
+
+function addInformation(data) {
+    document.title = data.title;
+    title.innerHTML = `${data.title} (${data.release_date.slice(0,4)})`;
+    poster.src = `${urlImage}${data.poster_path}`;
+    sinopsis.innerHTML = data.overview;
+    progresoFinal = Math.round(data.vote_average * 10);
+    addGenres(data)
+}
+

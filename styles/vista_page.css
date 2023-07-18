@@ -9,7 +9,7 @@
 
 body{
     background: linear-gradient(#390099, #9e0059, #ff0054);
-    min-width: 53em;
+    min-width: 90em;
 }
 
 div.contenedor{
@@ -57,12 +57,12 @@ section.informacion{
     margin: 1.7em 0;
     padding: 1em;
     border-radius: 10px;
+    min-width: 80em;
 }
 
 div.detalles{
     margin: 2em 4em;
     border-radius: 10px;
-    height: 35em;
     display: flex;
     position: relative;
 }
@@ -74,22 +74,92 @@ img.portada{
 }
 
 div.overview{
-    /* background-color: bisque; */
     margin: 2em 2em 2em 0;
+}
+
+div.titulo{
+    font-size: 2.2em;
+    font-weight: bolder;
+    padding-bottom: 15px;
 }
 
 div.rate{
     display: flex;
-    /* background-color: blue; */
+    margin: 1em;
+    position: relative;
     font-size: 1.3;
     font-weight: bolder;
-    height: 5em;
+    height: 6em;
+}
+
+div.average{
+    display: grid;
+    width: 6em;
+    height: 100%;
+    position: absolute;
+    place-items: center;
+}
+
+div.circle{
+    position: relative;
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    border: 4px solid #2b2d42;
+}
+
+div.circle::before{
+    content: "";
+    position: absolute;
+    height: 70%;
+    width: 70%;
+    background-color: #2b2d42;
+    border-radius: 50%;
+}
+
+div.value-circle{
+    position: relative;
+    font-size: 20px;
+    color: white;
+}
+
+div.title-circle{
+    display: flex;
     align-items: center;
     justify-content: center;
+    width: 5em;
+    padding: 15px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.3em;
+}
+
+div.genres{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+}
+
+div.genero{
+    display: flex;
+    margin: 0.2em 0.5em;
+    width: 8.7em;
+    font-size: 15px;
+    height: 2.5em;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.215);
+    border-radius: 20px;
+}
+
+div.genero:hover{
+    background-color: rgba(255, 255, 255, 0.367);
 }
 
 div.sinopsis{
-    /* background-color: chocolate; */
     height: 15em;
     font-size: 1.36em;
 }

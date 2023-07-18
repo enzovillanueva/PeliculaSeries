@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles/vista_page.css">
+    <link rel="shortcut icon" href="images/film-icon.png">
   </head>
   <body>
     <div class="contenedor">
@@ -21,8 +22,16 @@
         <div class="detalles">
           <img class="portada" id="poster" alt="port">
           <div class="overview">
-            <h2 class="titulo" id="titulo">Title</h2>
-            <div class="rate" id="rate"></div>
+            <div class="titulo" id="titulo">Title</div>
+            <div class="rate" id="rate">
+              <span class="average">
+                <div class="circle">
+                  <div class="value-circle">0 <sup>%</sup></div>
+                </div>
+              </span>
+              <div class="title-circle">Users Score</div>
+              <div class="genres" id="genres"></div>
+            </div>
             <h2>Sinopsis</h2>
             <div class="sinopsis" id="sinopsis"></div>
           </div>

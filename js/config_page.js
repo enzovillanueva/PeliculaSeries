@@ -40,7 +40,6 @@ const popularFilms = async () => {
     const response = await fetch(`${urlMovie}popular?api_key=${apiKey}&language=es-MX`);
     if (response.status == 200) {
         const data = await response.json();
-        console.log(data);
         addFilmsHTML(data);
     }else if (response.status == 401){
         console.log("La llave esta MAL");
@@ -54,7 +53,6 @@ const series = async () => {
     const response = await fetch(`https://api.themoviedb.org/3/trending/tv/week?api_key=${apiKey}&language=es-MX`)
     if (response.status == 200){
         const data = await response.json();
-        console.log(data);
         addSeriesHTML(data);
     }
 }
