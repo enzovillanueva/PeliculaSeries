@@ -146,9 +146,9 @@ div.genres{
 div.genero{
     display: flex;
     margin: 0.2em 0.5em;
-    width: 8.7em;
+    width: 10em;
     font-size: 15px;
-    height: 2.5em;
+    height: 2.7em;
     align-items: center;
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.215);
