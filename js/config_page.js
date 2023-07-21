@@ -26,11 +26,7 @@ const popularFilms = async () => {
     const response = await fetch(`${urlMovie}popular?api_key=${apiKey}&language=es-MX`);
     if (response.status == 200) {
         const data = await response.json();
-        addFilmsHTML(data);
-    }else if (response.status == 401){
-        console.log("La llave esta MAL");
-    }else if (response.status == 404){
-        console.log("La pelicula NO existe");
+        addDataHTML(data, 'popular');
     }
 }
 
@@ -39,8 +35,7 @@ const series = async () => {
     const response = await fetch(`https://api.themoviedb.org/3/trending/tv/week?api_key=${apiKey}&language=es-MX`)
     if (response.status == 200){
         const data = await response.json();
-        console.log(data)
-        addSeriesHTML(data);
+        addDataHTML(data, "series");
     }
 }
 
@@ -48,29 +43,17 @@ const series = async () => {
 popularFilms();
 series();
 
-function addFilmsHTML(data){
+function addDataHTML(data, label){
     let box = '';
     data.results.forEach(element => {
         box += `
             <!-- Si clickeo en algunas de estas peliculas, se enviará el ID de las mismas a la otra pág.-->
-            <a href="pages/vista.html?P${element.id}" class="film">
+            <a href="pages/vista.html?${(label == 'popular')  ? "P" + element.id : "S" + element.id}" class="film">
                 <img class="poster" src="${urlImage}${element.poster_path}"></img>
-                <div class="titulo">${element.title}</div>
+                <div class="titulo">${(label == 'popular') ? element.title : element.name}</div>
             </a>`
     });
-    document.getElementById("popular").innerHTML = box;
-}
-
-function addSeriesHTML(data){
-    let box = '';
-    data.results.forEach(element => {
-        box += `
-            <a href="pages/vista.html?S${element.id}" class="film">
-                <img class=poster src="${urlImage}${element.poster_path}"></img>
-                <div class="titulo">${element.name}</div>
-            </a>`
-    });
-    document.getElementById("series").innerHTML = box;
+    document.getElementById(label).innerHTML = box;
 }
 
 function configIcon(number, arrow) {
