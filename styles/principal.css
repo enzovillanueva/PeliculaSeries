@@ -197,3 +197,25 @@ a.film:hover img.poster{
     }
 }
 
+div.selector{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    border: 3px solid black;
+}
+
+div.selector .option{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    height: 100%;
+    width: 6em;
+    cursor: pointer;
+    border-radius: 15px;
+    font-weight: bolder;
+}
+
+#rated{
+    background: linear-gradient(#b5179d, #f72584);
+}

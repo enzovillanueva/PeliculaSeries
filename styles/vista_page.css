@@ -68,7 +68,8 @@ div.detalles{
 }
 
 img.portada{
-    width: 23em;
+    width: 25em;
+    height: 35em;
     margin: 1em 2em;
     border-radius: 15px;
 }
@@ -160,6 +161,6 @@ div.genero:hover{
 }
 
 div.sinopsis{
-    height: 15em;
+    min-height: 15em;
     font-size: 1.36em;
 }

@@ -1,10 +1,15 @@
 const apiKey = "a3aa373a1b65bb41fd52cf0fab69bb46";
 const urlMovie = "https://api.themoviedb.org/3/movie/";
 const urlImage = "https://image.tmdb.org/t/p/w500/";
+const urlTV = "https://api.themoviedb.org/3/tv/top_rated";
 
 const arrowIcons_1 = document.querySelectorAll(".icon_1 ion-icon"),
 arrowIcons_2 = document.querySelectorAll(".icon_2 ion-icon"),
 seccionContent = document.querySelectorAll(".popular");
+
+const rated = document.getElementById("rated"),
+week = document.getElementById("week"),
+day = document.getElementById("day");
 
 // Scroll Slice
 arrowIcons_1.forEach(icon => {
@@ -30,18 +35,43 @@ const popularFilms = async () => {
     }
 }
 
+rated.addEventListener("click", () => {
+    rated.style.background = `linear-gradient(#b5179d, #f72584)`;
+    week.style.background = `transparent`;
+    day.style.background = `transparent`;
+    
+    series("https://api.themoviedb.org/3/tv/top_rated");
+});
+
+week.addEventListener("click", () => {
+    week.style.background = `linear-gradient(#b5179d, #f72584)`;
+    rated.style.background = `transparent`;
+    day.style.background = `transparent`;
+    
+    series("https://api.themoviedb.org/3/trending/tv/week");
+});
+
+day.addEventListener("click", () => {
+    day.style.background = `linear-gradient(#b5179d, #f72584)`;
+    week.style.background = `transparent`;
+    rated.style.background = `transparent`;
+    
+    series("https://api.themoviedb.org/3/trending/tv/day");
+});
+
 // Apartado de series.
-const series = async () => {
-    const response = await fetch(`https://api.themoviedb.org/3/trending/tv/week?api_key=${apiKey}&language=es-MX`)
+const series = async (link) => {
+    const response = await fetch(`${link}?api_key=${apiKey}&language=es-MX`)
     if (response.status == 200){
         const data = await response.json();
+        console.log(data)
         addDataHTML(data, "series");
     }
 }
 
 // Funciones.
 popularFilms();
-series();
+series(urlTV);
 
 function addDataHTML(data, label){
     let box = '';
