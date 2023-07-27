@@ -31,6 +31,7 @@ const popularFilms = async () => {
     const response = await fetch(`${urlMovie}popular?api_key=${apiKey}&language=es-MX`);
     if (response.status == 200) {
         const data = await response.json();
+        console.log(data)
         addDataHTML(data, 'popular');
     }
 }
