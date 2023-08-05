@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../styles/vista_page.css">
+    <link rel="stylesheet" href="../styles/busqueda.css">
     <link rel="shortcut icon" href="../images/film-icon.png">
+    <title>Buscador</title>
   </head>
   <body>
     <div class="contenedor">
@@ -22,29 +22,29 @@
         </nav>
       </header>
 
-      <section class="informacion" id="informacion">
-        <div class="detalles">
-          <img class="portada" id="poster" alt="port">
-          <div class="overview">
-            <div class="titulo" id="titulo">Title</div>
-            <div class="rate" id="rate">
-              <span class="average">
-                <div class="circle">
-                  <div class="value-circle">0 <sup>%</sup></div>
-                </div>
-              </span>
-              <div class="title-circle">Users Score</div>
-              <div class="genres" id="genres"></div>
-            </div>
-            <h2>Sinopsis</h2>
-            <div class="sinopsis" id="sinopsis"></div>
+      <section class="consulta">
+        <div class="titulo">
+          <h2 id="title">Resultados de: </h2>
+          <div class="opciones">
+            <div id="marcador"></div>
+            <span class="opcion" id="peliculas">Peliculas</span>
+            <span class="opcion" id="series">Series</span>
           </div>
         </div>
+
+        <div class="resultados" id="results"></div>
+
+        <!-- <div class="paginacion">
+          <button id="prev">Anterior</button>
+          <button id="next">Siguiente</button>
+        </div> -->
       </section>
 
+
     </div>
+    
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="../js/config_vista.js"></script>
+    <script src="../js/config_busqueda.js"></script>
   </body>
 </html>

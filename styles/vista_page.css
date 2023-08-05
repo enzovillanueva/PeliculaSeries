@@ -42,14 +42,50 @@ div.titulo_pag{
 }
 
 nav.links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 50px;
     font-size: 1.2em;
     
 }
 
 nav.links a{
-    height: 100%;
     padding: 10px;
+}
+
+span.search{
+    display: flex;
+    border-radius: 70px;
+}
+
+span.search:hover{
+    background-color: #ffffff;
+}
+
+span.search:hover input{
+    width: 200px;
+    padding: 0 0 0 15px;
+}
+
+span.search button{
+    background-color: #9e0059;
+    text-decoration: none;
+    border-radius: 50%;
+    border: 0;
+    color: white;
+    font-size: 20px;
+    padding: 9px 12px 3px 12px;
+}
+
+
+span.search input{
+    width: 0;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    transition: 0.8s;
+    background-color: transparent;
 }
 
 section.informacion{

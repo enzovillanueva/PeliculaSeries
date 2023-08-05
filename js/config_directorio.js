@@ -6,7 +6,15 @@ const urlImage = "https://image.tmdb.org/t/p/w500/";
 const urlSeries = "https://api.themoviedb.org/3/tv/popular";
 
 const query = location.search.substring(1);
-console.log(query)
+console.log(query);
+
+// Buscador
+const search = document.getElementById("buscar"),
+value = document.getElementById("values");
+
+search.addEventListener("click", () => {
+    location.href = `../pages/busqueda.html?${value.value}`;
+});
 
 let pages = 1;
 const buttonPrev = document.getElementById("prev"),

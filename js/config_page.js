@@ -11,6 +11,24 @@ const rated = document.getElementById("rated"),
 week = document.getElementById("week"),
 day = document.getElementById("day");
 
+const items = document.querySelectorAll(".option"),
+marcador = document.querySelector("#marcador");
+
+const search = document.getElementById("buscar"),
+value = document.getElementById("values");
+
+// Buscador.
+search.addEventListener("click", () => {
+    location.href = `../pages/busqueda.html?${value.value}`;
+});
+
+// Marcador.
+items.forEach( opcion => {
+    opcion.addEventListener("click", (e) => {
+        indicador(e.target);
+    });
+});
+
 // Scroll Slice
 arrowIcons_1.forEach(icon => {
     icon.addEventListener("click", () => {
@@ -37,26 +55,14 @@ const popularFilms = async () => {
 }
 
 rated.addEventListener("click", () => {
-    rated.style.background = `linear-gradient(#b5179d, #f72584)`;
-    week.style.background = `transparent`;
-    day.style.background = `transparent`;
-    
     series("https://api.themoviedb.org/3/tv/top_rated");
 });
 
 week.addEventListener("click", () => {
-    week.style.background = `linear-gradient(#b5179d, #f72584)`;
-    rated.style.background = `transparent`;
-    day.style.background = `transparent`;
-    
     series("https://api.themoviedb.org/3/trending/tv/week");
 });
 
 day.addEventListener("click", () => {
-    day.style.background = `linear-gradient(#b5179d, #f72584)`;
-    week.style.background = `transparent`;
-    rated.style.background = `transparent`;
-    
     series("https://api.themoviedb.org/3/trending/tv/day");
 });
 
@@ -92,4 +98,9 @@ function configIcon(number, arrow) {
     let scrollMax= seccionContent[number].scrollWidth - seccionContent[number].clientWidth;
     arrow[0].parentElement.style.display = scroll > 0 ? "flex" : "none";
     arrow[1].parentElement.style.display = scrollMax > scroll ? "flex" : "none";
+}
+
+function indicador(link) {
+    marcador.style.left = link.offsetLeft+"px";
+    marcador.style.width = link.offsetWidth+"px";
 }

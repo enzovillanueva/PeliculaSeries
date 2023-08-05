@@ -14,6 +14,10 @@ poster = document.getElementById("poster"),
 sinopsis = document.getElementById("sinopsis"),
 rate = document.getElementById("rate");
 
+// Buscador
+const search = document.getElementById("buscar"),
+value = document.getElementById("values");
+
 // circle progress.
 const circular_progress = document.querySelector(".circle"),
 value_cp = document.querySelector(".value-circle");
@@ -28,6 +32,10 @@ const information = async () => {
         addInformation(data);
     }
 }
+
+search.addEventListener("click", () => {
+    location.href = `../pages/busqueda.html?${value.value}`;
+});
 
 const progress = setInterval(() => {
     if (progresoFinal != 0) progreso++;
