@@ -16,7 +16,7 @@ search.addEventListener("click", () => {
     location.href = `../pages/busqueda.html?${value.value}`;
 });
 
-let pages = 1;
+let pages = 1, limit_page = 1;
 const buttonPrev = document.getElementById("prev"),
 buttonNext = document.getElementById("next");
 
@@ -36,17 +36,13 @@ if (query == 'series') {
 }
 
 buttonNext.addEventListener("click",() =>{
-    if (pages < 20){
-        pages++;
-        addListHTML();
-    }
+    pages++;
+    addListHTML();
 });
 
 buttonPrev.addEventListener("click",() =>{
-    if (pages > 1){
-        pages--;
-        addListHTML();
-    }
+    pages--;
+    addListHTML();
 });
 
 const addListHTML = async () => {
@@ -54,6 +50,7 @@ const addListHTML = async () => {
     if (response.status == 200){
         const data = await response.json();
         console.log(data);
+        button_config(data);
         addElementList(data);
     }
 };
@@ -72,4 +69,20 @@ function addElementList(data){
     });
 
     document.getElementById("listados").innerHTML = box;
+}
+
+function button_config(data){
+    if (data.total_pages == 1) {
+        buttonNext.style.display = "none";
+    }else{
+        limit_page = data.total_pages;
+        if (pages > 1) {
+            buttonPrev.style.display = "block";
+        }
+    }
+
+    if (pages == 1) {
+        buttonPrev.style.display = "none";
+    }
+    buttonNext.style.display = (pages == limit_page) ? "none" : "block";
 }

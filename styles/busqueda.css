@@ -96,7 +96,6 @@ div.title-nav{
 }
 
 /* Seccion */
-
 section.consulta{
     background-color: rgba(255, 255, 255, 0.39);
     margin: 1.5em 0;
@@ -140,7 +139,6 @@ div.opciones span{
 }
 
 /* Resultados */
-
 div.resultados{
     display: flex;
     flex-wrap: wrap;
@@ -195,4 +193,30 @@ a.contenido:hover img.poster{
         filter: invert(70%);
         opacity: .5;
     }
+}
+
+/* Paginación */
+div.paginacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paginacion button{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 1em 2em;
+    background: linear-gradient(#b5179d70, #f725846c);
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.paginacion button:hover{
+    background: linear-gradient(#b5179d, #f72584);
+}
+
+#prev{
+    display: none;
 }

@@ -238,7 +238,6 @@ div.selector{
     position: relative;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 20px;
-    border: 3px solid black;
 }
 
 div.selector #marcador{

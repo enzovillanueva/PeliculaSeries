@@ -15,6 +15,11 @@ marcador = document.querySelector("#marcador");
 const peliculas = document.getElementById("peliculas"),
 series = document.getElementById("series");
 
+// paginacion.
+let pages = 1, limit_page = 1;
+const buttonPrev = document.getElementById("prev"),
+buttonNext = document.getElementById("next");
+
 // Buscador
 const search = document.getElementById("buscar"),
 value = document.getElementById("values");
@@ -25,6 +30,16 @@ search.addEventListener("click", () => {
     location.href = `../pages/busqueda.html?${value.value}`;
 });
 
+buttonNext.addEventListener("click",() =>{
+    pages++;
+    consulta();
+});
+
+buttonPrev.addEventListener("click",() =>{
+    pages--;
+    consulta();
+});
+
 // Marcador.
 items.forEach( opcion => {
     opcion.addEventListener("click", (e) => {
@@ -33,24 +48,27 @@ items.forEach( opcion => {
 });
 
 // Tipo consultas.
-
 peliculas.addEventListener("click", () => {
     type = "movie";
+    pages = 1, limit_page = 1;
     consulta();
-})
+});
 
 series.addEventListener("click", () => {
     type = "tv";
+    pages = 1, limit_page = 1;
     consulta();
-})
+});
 
 // Consulta.
 const consulta = async () => {
-    const response = await fetch(`${urlCollection}/${type}?query=${palabra}&api_key=${apiKey}&language=es-MX`)
+    const response = await fetch(`${urlCollection}/${type}?query=${palabra}&api_key=${apiKey}&language=es-MX&page=${pages}`)
     if (response.status == 200){
         const data = await response.json();
         console.log(data);
+        console.log(`pages = ${pages} - limit_page = ${limit_page}`);
         document.documentElement.style.height = data.results.length < 6 ? "100%" : "";
+        button_config(data);
         addDataHTML(data);
     }
 };
@@ -83,4 +101,20 @@ function addDataHTML(data){
         })
     }
     document.getElementById("results").innerHTML = box;
+}
+
+function button_config(data){
+    if (data.total_pages == 1) {
+        buttonNext.style.display = "none";
+    }else{
+        limit_page = data.total_pages;
+        if (pages > 1) {
+            buttonPrev.style.display = "block";
+        }
+    }
+
+    if (pages == 1) {
+        buttonPrev.style.display = "none";
+    }
+    buttonNext.style.display = (pages == limit_page) ? "none" : "block";
 }
