@@ -100,6 +100,7 @@ function addDataHTML(data){
             `
         })
     }
+    document.getElementById("num_pag").innerHTML = pages;
     document.getElementById("results").innerHTML = box;
 }
 

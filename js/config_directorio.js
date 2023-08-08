@@ -67,7 +67,7 @@ function addElementList(data){
         </a>
         `
     });
-
+    document.getElementById("num_pag").innerHTML = pages;
     document.getElementById("listados").innerHTML = box;
 }
 

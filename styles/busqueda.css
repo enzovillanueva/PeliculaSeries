@@ -12,6 +12,26 @@ body{
     min-width: 60em;
 }
 
+/* ScrollBar */
+::-webkit-scrollbar{
+    width: 10px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #023047;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track{
+    background: #001219;
+}
+
+div.contenedor{
+    margin: 1.6em 3em;
+    position: relative;
+}
+
+
 div.contenedor{
     margin: 1.6em 3em;
     position: relative;
@@ -33,7 +53,7 @@ header.cabecero{
 header a{
     text-decoration: none;
     color: #FFFFFF;
-    text-shadow: 0 0 10px #FFFFFF;
+    /* text-shadow: 0 0 10px #FFFFFF; */
 }
 
 div.titulo_pag{
@@ -52,7 +72,16 @@ nav.links{
 }
 
 nav.links a{
-    padding: 10px;
+    padding: 30px;
+}
+
+nav.links a:hover{
+    background: linear-gradient(#390099,#9e0059, #ff0054);
+    background-clip: text;
+    transition: 0.5s;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bolder;
 }
 
 span.search{
@@ -217,6 +246,14 @@ div.paginacion {
     background: linear-gradient(#b5179d, #f72584);
 }
 
-#prev{
-    display: none;
+.paginacion #num_pag{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00000070;
+    color: white;
+    border-radius: 5px;
+    width: 2.4em;
+    height: 2.4em;
+    font-weight: bolder;
 }

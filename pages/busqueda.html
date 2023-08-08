@@ -14,7 +14,7 @@
         <nav class="links">
             <span><a href="../pages/directorio.html?series">Series</a></span>
             <span><a href="../pages/directorio.html?ratedmovies">Mejores Peliculas</a></span>
-            <span><a href="#">Acerca de</a></span>
+            <!-- <span><a href="#">Acerca de</a></span> -->
             <span class="search">
               <input id="values" type="text" placeholder="Buscar...">
               <button id="buscar"><ion-icon name="search-sharp"></ion-icon></button>
@@ -35,8 +35,9 @@
         <div class="resultados" id="results"></div>
 
         <div class="paginacion">
-          <button id="prev">Anterior</button>
-          <button id="next">Siguiente</button>
+          <button id="prev"><ion-icon name="caret-back-outline"></ion-icon></button>
+          <div id="num_pag">1</div>
+          <button id="next"><ion-icon name="caret-forward-outline"></ion-icon></button>
         </div>
       </section>
 
