@@ -14,7 +14,7 @@ poster = document.getElementById("poster"),
 sinopsis = document.getElementById("sinopsis"),
 rate = document.getElementById("rate");
 
-// Buscador
+// Buscador.
 const search = document.getElementById("buscar"),
 value = document.getElementById("values");
 
@@ -24,6 +24,7 @@ value_cp = document.querySelector(".value-circle");
 
 let progreso = 0, progresoFinal = 60, velocidad = 10;
 
+// Información.
 const information = async () => {
     const response = await fetch(`${type == 'P'? urlMovie : urlTV }${id}?api_key=${apiKey}&language=es-MX`);
     if (response.status == 200){
@@ -37,6 +38,7 @@ search.addEventListener("click", () => {
     location.href = `../pages/busqueda.html?${value.value}`;
 });
 
+// Circle progress.
 const progress = setInterval(() => {
     if (progresoFinal != 0) progreso++;
     value_cp.textContent = `${progreso}%`;
@@ -46,6 +48,7 @@ const progress = setInterval(() => {
 
 information();
 
+// FUNCIONES------------------------------
 function addGenres(data) {
     let box = "";
     if (data.genres.length == 0) {
@@ -60,6 +63,10 @@ function addGenres(data) {
     document.getElementById("genres").innerHTML = box;
 }
 
+function addRelease(data) {
+    document.getElementById("estreno").innerHTML = `Fecha de estreno: ${(type == 'P') ? data.release_date : data.first_air_date}` ; 
+}
+
 function addInformation(data) {
     document.title = (type == 'P') ? data.title : data.name;
     date_type = (type == 'P') ?  data.release_date : data.first_air_date;
@@ -67,6 +74,10 @@ function addInformation(data) {
     poster.src = `${urlImage}${data.poster_path}`;
     sinopsis.innerHTML = data.overview.length == 0 ? "No hay una sinopsis" : data.overview;
     progresoFinal = Math.round(data.vote_average * 10);
+    if (type == 'P') {
+        document.getElementById("tag-line").innerHTML = data.tagline;
+    }
     addGenres(data);
+    addRelease(data);
 }
 

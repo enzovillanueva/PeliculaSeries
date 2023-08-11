@@ -48,7 +48,6 @@ header.cabecero{
 header a{
     text-decoration: none;
     color: #FFFFFF;
-    /* text-shadow: 0 0 10px #FFFFFF; */
 }
 
 div.titulo_pag{
@@ -126,6 +125,7 @@ section.directorio{
     font-weight: bolder;
 }
 
+/* Resultados */
 div.listados{
     display: flex;
     flex-wrap: wrap;
@@ -212,4 +212,41 @@ div.paginacion{
     width: 2.4em;
     height: 2.4em;
     font-weight: bolder;
+}
+
+/* Pie de página */
+footer#pie-pag{
+    height: 5em;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #00000067;
+}
+
+.descripcion{
+    color: rgba(255, 255, 255, 0.749);
+}
+
+.links-bio{
+    display: flex;
+    width: 8em;
+}
+
+.links-bio a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    border-radius: 50%;
+    padding: 0;
+    font-size: 1.9em;
+    width: 2.4em;
+    height: 1.5em;
+    background-color: #000;
+    color: white;
+}
+.links-bio a:hover{
+    background-color: #00000075;
 }

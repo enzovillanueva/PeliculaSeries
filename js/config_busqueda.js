@@ -67,7 +67,6 @@ const consulta = async () => {
         const data = await response.json();
         console.log(data);
         console.log(`pages = ${pages} - limit_page = ${limit_page}`);
-        document.documentElement.style.height = data.results.length < 6 ? "100%" : "";
         button_config(data);
         addDataHTML(data);
     }
@@ -86,6 +85,8 @@ function addDataHTML(data){
     let box = '';
     if (data.results.length == 0) {
         document.title = "No se encuentraron resultados";
+        document.documentElement.style.height = "100%";
+        document.getElementById("pie-pag").style.position = "absolute";
         box += "No se encontraron resultados.";
     }else{
         document.title = "Resultados de: " + query.replace(/%20/g, " ");

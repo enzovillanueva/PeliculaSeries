@@ -31,11 +31,7 @@ div.contenedor{
     position: relative;
 }
 
-div.contenedor{
-    margin: 1.6em 3em;
-    position: relative;
-}
-
+/* Cabecero */
 header.cabecero{
     display: flex;
     position: sticky;
@@ -51,7 +47,6 @@ header.cabecero{
 a{
     text-decoration: none;
     color: #FFFFFF;
-    /* text-shadow: 0 0 10px #FFFFFF; */
 }
 
 div.titulo_pag{
@@ -116,6 +111,7 @@ span.search input{
     background-color: transparent;
 }
 
+/* Sección */
 section.informacion{
     background-color: rgba(255, 255, 255, 0.39);
     margin: 1.7em 0;
@@ -131,6 +127,7 @@ div.detalles{
     position: relative;
 }
 
+/* Imagen */
 img.portada{
     width: 25em;
     height: 35em;
@@ -138,6 +135,7 @@ img.portada{
     border-radius: 15px;
 }
 
+/* Información */
 div.overview{
     margin: 2em 2em 2em 0;
 }
@@ -148,6 +146,7 @@ div.titulo{
     padding-bottom: 15px;
 }
 
+/* Circle progress */
 div.rate{
     display: flex;
     margin: 1em;
@@ -201,6 +200,7 @@ div.title-circle{
     font-size: 1.3em;
 }
 
+/* Géneros */
 div.genres{
     display: flex;
     flex-wrap: wrap;
@@ -224,7 +224,47 @@ div.genero:hover{
     background-color: rgba(255, 255, 255, 0.367);
 }
 
+#estreno{
+    margin: 0.8em 0;
+    font-weight: 600;
+}
+
 div.sinopsis{
-    min-height: 15em;
+    min-height: 12em;
     font-size: 1.36em;
+}
+
+/* Pie de página */
+footer{
+    height: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #00000067;
+}
+
+.descripcion{
+    color: rgba(255, 255, 255, 0.749);
+}
+
+.links-bio{
+    display: flex;
+    width: 8em;
+}
+
+.links-bio a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    border-radius: 50%;
+    padding: 0;
+    font-size: 1.9em;
+    width: 2.4em;
+    height: 1.5em;
+    background-color: #000;
+    color: white;
+}
+.links-bio a:hover{
+    background-color: #00000075;
 }

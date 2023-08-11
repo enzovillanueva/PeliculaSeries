@@ -35,6 +35,7 @@ if (query == 'series') {
     URLpage = urlMovieRated;
 }
 
+// Botones de páginación.
 buttonNext.addEventListener("click",() =>{
     pages++;
     addListHTML();
@@ -45,6 +46,7 @@ buttonPrev.addEventListener("click",() =>{
     addListHTML();
 });
 
+// Inserción de contenido.
 const addListHTML = async () => {
     const response = await fetch(`${URLpage}?api_key=${apiKey}&language=es-MX&page=${pages}`);
     if (response.status == 200){
@@ -57,6 +59,7 @@ const addListHTML = async () => {
 
 addListHTML();
 
+// FUNCIONES------------------------------
 function addElementList(data){
     let box = "";
     data.results.forEach(element => {

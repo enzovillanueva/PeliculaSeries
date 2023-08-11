@@ -44,7 +44,7 @@ arrowIcons_2.forEach(icon => {
     });
 });
 
-// Apartado de peliculas.
+// Apartado para los contenidos.
 const popularFilms = async () => {
     const response = await fetch(`${urlMovie}popular?api_key=${apiKey}&language=es-MX`);
     if (response.status == 200) {
@@ -76,10 +76,10 @@ const series = async (link) => {
     }
 }
 
-// Funciones.
 popularFilms();
 series(urlTV);
 
+// FUNCIONES------------------------------
 function addDataHTML(data, label){
     let box = '';
     data.results.forEach(element => {

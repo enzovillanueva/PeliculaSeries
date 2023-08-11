@@ -9,29 +9,38 @@
   </head>
   <body>
     <div class="contenedor">
-        <header class="cabecero">
-            <div class="titulo_pag"><a href="../index.html">Peliculas</a></div>
-            <nav class="links">
-              <span><a href="../pages/directorio.html?series">Series</a></span>
-              <span><a href="../pages/directorio.html?ratedmovies">Mejores Peliculas</a></span>
-              <!-- <span><a href="#">Acerca de</a></span> -->
-              <span class="search">
-                <input id="values" type="text" placeholder="Buscar...">
-                <button id="buscar"><ion-icon name="search-sharp"></ion-icon></button>
-              </span>
-            </nav>
-        </header>
+      <header class="cabecero">
+          <div class="titulo_pag"><a href="../index.html">Films & TV</a></div>
+          <nav class="links">
+            <span><a href="../pages/directorio.html?series">Series</a></span>
+            <span><a href="../pages/directorio.html?ratedmovies">Mejores Peliculas</a></span>
+            <!-- <span><a href="#">Acerca de</a></span> -->
+            <span class="search">
+              <input id="values" type="text" placeholder="Buscar...">
+              <button id="buscar"><ion-icon name="search-sharp"></ion-icon></button>
+            </span>
+          </nav>
+      </header>
 
-        <section class="directorio">
-            <div class="titulo_directorio" id="title_directory">Directorio</div>
-            <div class="listados" id="listados"></div>
-            <div class="paginacion">
-                <button id="prev"><ion-icon name="caret-back-outline"></ion-icon></button>
-                <div id="num_pag">1</div>
-                <button id="next"><ion-icon name="caret-forward-outline"></ion-icon></button>
-            </div>
-        </section>
+      <section class="directorio">
+          <div class="titulo_directorio" id="title_directory">Directorio</div>
+          <div class="listados" id="listados"></div>
+          <div class="paginacion">
+              <button id="prev"><ion-icon name="caret-back-outline"></ion-icon></button>
+              <div id="num_pag">1</div>
+              <button id="next"><ion-icon name="caret-forward-outline"></ion-icon></button>
+          </div>
+      </section>
     </div>
+
+    <footer id="pie-pag">
+      <div class="descripcion"><b>Films & TV.</b> Una simple página con información breve de las peliculas y series del momento.</div>
+      <div class="links-bio">
+        <a href="https://github.com/enzovillanueva" title="Github" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+        <a href="https://twitter.com/EnzoV120" title="Twitter" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
+      </div>
+    </footer>
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="../js/config_directorio.js"></script>
